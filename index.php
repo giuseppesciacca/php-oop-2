@@ -29,7 +29,52 @@ include_once __DIR__ . '/Database/db.php';
 
     <main>
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center py-5">
+
+                <?php foreach ($computers as $computer) : ?>
+
+                    <div class="col-auto">
+
+                        <div class="card h-100">
+                            <img class="card-img-top" src="https://fastly.picsum.photos/id/176/200/200.jpg?hmac=c9CJbdQxNRFwPysb-dsVjeNmtU0quZAdXpf0FG2CfxU" alt="Title">
+                            <div class="card-body">
+
+                                <h5 class="card-title"> <?= $computer->getType() ?> </h5>
+                                <h4 class="card-title"> <?= $computer->model ?> </h4>
+
+                                <p class="card-text">Ram: <?= $computer->ram ?></p>
+                                <p class="card-text">GPU: <?= $computer->gpu ?></p>
+                                <p class="card-text">CPU: <?= $computer->cpu ?></p>
+                                <p class="card-text">Storage: <?= $computer->storage ?></p>
+                                <p class="card-text">GPU: <?= $computer->gpu ?></p>
+                                <p class="card-text">Motherboard: <?= $computer->motherboard ?></p>
+
+                                <?php if ($computer->battery) : ?>
+                                    <p class="card-text">Battery: <?= $computer->battery ?></p>
+                                <?php endif ?>
+
+                                <?php if ($computer->mouse) : ?>
+                                    <p class="card-text">Mouse: <?= $computer->mouse ?></p>
+                                <?php endif ?>
+
+                                <?php if ($computer->monitor) : ?>
+                                    <p class="card-text">Monitor: <?= $computer->monitor ?></p>
+                                <?php endif ?>
+
+                                <?php if ($computer->case) : ?>
+                                    <p class="card-text">Case: <?= $computer->case ?></p>
+                                <?php endif ?>
+
+                                <?php if ($computer->psu) : ?>
+                                    <p class="card-text">PSU: <?= $computer->psu ?></p>
+                                <?php endif ?>
+
+                            </div>
+                        </div>
+                        <!-- /card -->
+                    </div>
+                    <!-- /col -->
+                <?php endforeach ?>
 
             </div>
         </div>
