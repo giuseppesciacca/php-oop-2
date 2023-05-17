@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/Models/Computer.php';
+require_once __DIR__ . '/Models/Monitor.php';
 require_once __DIR__ . '/Models/Desktop.php';
 require_once __DIR__ . '/Models/Laptop.php';
 
@@ -58,7 +59,7 @@ include_once __DIR__ . '/Database/db.php';
                                 <?php endif ?>
 
                                 <?php if ($computer->monitor) : ?>
-                                    <p class="card-text"><strong>Monitor:</strong> <?= $computer->monitor ?></p>
+                                    <p class="card-text"><strong>Monitor:</strong> <?= $computer->monitor->inches, ', ', $computer->monitor->resolution ?></p>
                                 <?php endif ?>
 
                                 <?php if ($computer->case) : ?>
