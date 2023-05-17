@@ -33,40 +33,42 @@ include_once __DIR__ . '/Database/db.php';
 
                 <?php foreach ($computers as $computer) : ?>
 
-                    <div class="col-auto">
+                    <div class="col-3">
 
                         <div class="card h-100">
-                            <img class="card-img-top" src="https://fastly.picsum.photos/id/176/200/200.jpg?hmac=c9CJbdQxNRFwPysb-dsVjeNmtU0quZAdXpf0FG2CfxU" alt="Title">
+                            <h5 class="card-title text-center p-3"> <?= $computer->getType() ?> </h5>
+                            <img class="card-img-top" src="<?= $computer->urlPath ?>" alt="Title">
                             <div class="card-body">
 
-                                <h5 class="card-title"> <?= $computer->getType() ?> </h5>
                                 <h4 class="card-title"> <?= $computer->model ?> </h4>
 
-                                <p class="card-text">Ram: <?= $computer->ram ?></p>
-                                <p class="card-text">GPU: <?= $computer->gpu ?></p>
-                                <p class="card-text">CPU: <?= $computer->cpu ?></p>
-                                <p class="card-text">Storage: <?= $computer->storage ?></p>
-                                <p class="card-text">GPU: <?= $computer->gpu ?></p>
-                                <p class="card-text">Motherboard: <?= $computer->motherboard ?></p>
+                                <hr>
+
+                                <p class="card-text"> <strong>Ram:</strong> <?= $computer->ram ?></p>
+                                <p class="card-text"> <strong>GPU:</strong> <?= $computer->gpu ?></p>
+                                <p class="card-text"><strong>CPU:</strong> <?= $computer->cpu ?></p>
+                                <p class="card-text"><strong>Storage:</strong> <?= $computer->storage ?></p>
+                                <p class="card-text"><strong>GPU:</strong> <?= $computer->gpu ?></p>
+                                <p class="card-text"><strong>Motherboard:</strong> <?= $computer->motherboard ?></p>
 
                                 <?php if ($computer->battery) : ?>
-                                    <p class="card-text">Battery: <?= $computer->battery ?></p>
+                                    <p class="card-text"><strong>Battery:</strong> <?= $computer->battery ?></p>
                                 <?php endif ?>
 
                                 <?php if ($computer->mouse) : ?>
-                                    <p class="card-text">Mouse: <?= $computer->mouse ?></p>
+                                    <p class="card-text"><strong>Mouse:</strong> <?= $computer->mouse ?></p>
                                 <?php endif ?>
 
                                 <?php if ($computer->monitor) : ?>
-                                    <p class="card-text">Monitor: <?= $computer->monitor ?></p>
+                                    <p class="card-text"><strong>Monitor:</strong> <?= $computer->monitor ?></p>
                                 <?php endif ?>
 
                                 <?php if ($computer->case) : ?>
-                                    <p class="card-text">Case: <?= $computer->case ?></p>
+                                    <p class="card-text"><strong>Case:</strong> <?= $computer->case ?></p>
                                 <?php endif ?>
 
                                 <?php if ($computer->psu) : ?>
-                                    <p class="card-text">PSU: <?= $computer->psu ?></p>
+                                    <p class="card-text"><strong>PSU:</strong> <?= $computer->psu ?></p>
                                 <?php endif ?>
 
                             </div>
