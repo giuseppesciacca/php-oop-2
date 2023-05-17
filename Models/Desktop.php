@@ -15,4 +15,22 @@ class Desktop extends Computer
     {
         echo "Computer Desktop";
     }
+
+    public function getInfo()
+    {
+        $info = [
+            $this->model,
+            $this->ram,
+            $this->gpu,
+            $this->cpu,
+            $this->storage,
+            $this->motherboard,
+            $this->mouse,
+            $this->monitor,
+            $this->case,
+            $this->psu
+        ];
+
+        return implode(", ", $info);
+    }
 };

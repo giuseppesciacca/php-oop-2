@@ -17,4 +17,18 @@ class Computer
     {
         echo "Computer";
     }
+
+    public function getInfo()
+    {
+        $info = [
+            $this->model,
+            $this->ram,
+            $this->gpu,
+            $this->cpu,
+            $this->storage,
+            $this->motherboard
+        ];
+
+        return implode(", ", $info);
+    }
 };

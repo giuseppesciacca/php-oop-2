@@ -12,4 +12,19 @@ class Laptop extends Computer
     {
         echo "Computer Laptop";
     }
+
+    public function getInfo()
+    {
+        $info = [
+            $this->model,
+            $this->ram,
+            $this->gpu,
+            $this->cpu,
+            $this->storage,
+            $this->motherboard,
+            $this->battery
+        ];
+
+        return implode(", ", $info);
+    }
 };

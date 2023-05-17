@@ -1,12 +1,10 @@
 <?php
-//Creiamo un set di dati in forma di array di oggetti e stampiamoli a schermo in una card usando bootstrap.
-//Nella card, indichiamo anche che tipo di prodotto stiamo visualizzando (desktop, laptop) creando un apposito metodo poliforfo in ciascuna sottoclasse.
-
 require_once __DIR__ . '/Models/Computer.php';
 require_once __DIR__ . '/Models/Desktop.php';
 require_once __DIR__ . '/Models/Laptop.php';
 
 include_once __DIR__ . '/Database/db.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +68,10 @@ include_once __DIR__ . '/Database/db.php';
                                 <?php if ($computer->psu) : ?>
                                     <p class="card-text"><strong>PSU:</strong> <?= $computer->psu ?></p>
                                 <?php endif ?>
+
+                                <hr>
+
+                                <p class="card-text"><strong>SOMMARY:</strong> <?= $computer->getInfo() ?></p>
 
                             </div>
                         </div>
