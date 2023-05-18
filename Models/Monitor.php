@@ -5,7 +5,11 @@
  */
 class Monitor
 {
-    public function __construct(public string $inches, public string $resolution)
+
+    public $inches;
+    public $resolution;
+
+    public function __construct(string $inches, string $resolution)
     {
         $this->$inches;
         $this->$resolution;

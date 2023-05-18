@@ -1,7 +1,20 @@
 <?php
 class Desktop extends Computer
 {
-    public function __construct(public string $model, public string $ram, public string $gpu, public string $cpu, public string $storage, public string $motherboard, public string $urlPath, public string $mouse, public Monitor $monitor, public string $case, public string $psu)
+    public $model;
+    public $ram;
+    public $gpu;
+    public $cpu;
+    public $storage;
+    public $motherboard;
+    public $urlPath;
+    public $mouse;
+    public Monitor $monitor;
+    public $case;
+    public $psu;
+
+
+    public function __construct(string $model, string $ram, string $gpu, string $cpu, string $storage, string $motherboard, string $urlPath, string $mouse, Monitor $monitor, string $case, string $psu)
     {
         parent::__construct($model, $ram, $gpu, $cpu, $storage, $motherboard, $urlPath);
         $this->mouse = $mouse;

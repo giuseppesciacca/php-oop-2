@@ -2,7 +2,16 @@
 
 class Laptop extends Computer
 {
-    public function __construct(public string $model, public string $ram, public string $gpu, public string $cpu, public string $storage, public string $motherboard, public string $urlPath, public string $battery)
+    public $model;
+    public $ram;
+    public $gpu;
+    public $cpu;
+    public $storage;
+    public $motherboard;
+    public $urlPath;
+    public $battery;
+
+    public function __construct(string $model, string $ram, string $gpu, string $cpu, string $storage, string $motherboard, string $urlPath, string $battery)
     {
         parent::__construct($model, $ram, $gpu, $cpu, $storage, $motherboard, $urlPath);
         $this->battery = $battery;
