@@ -6,8 +6,14 @@ trait Shop
 
     public function setShop(string $shop)
     {
-        if (!in_array($shop, $this->shops)) {
-            array_push($this->shops, $shop);
+        try {
+            if (!in_array($shop, $this->shops) && (!is_numeric($shop))) {
+                array_push($this->shops, $shop);
+            } else {
+                throw new Exception('Is not a string');
+            }
+        } catch (Exception $e) {
+            var_dump('Eccezione: ' . $e->getMessage());
         }
     }
 

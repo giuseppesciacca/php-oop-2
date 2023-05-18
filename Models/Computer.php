@@ -1,5 +1,5 @@
 <?php
-
+include_once __DIR__ . '/../Traits/Shops.php';
 class Computer
 {
 
