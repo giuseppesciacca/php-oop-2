@@ -5,7 +5,6 @@ require_once __DIR__ . '/Models/Desktop.php';
 require_once __DIR__ . '/Models/Laptop.php';
 
 include_once __DIR__ . '/Database/db.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -50,31 +49,28 @@ include_once __DIR__ . '/Database/db.php';
                                 <p class="card-text"><strong>GPU:</strong> <?= $computer->gpu ?></p>
                                 <p class="card-text"><strong>Motherboard:</strong> <?= $computer->motherboard ?></p>
 
-                                <?php if ($computer->battery) : ?>
+                                <?php if (isset($computer->battery)) : ?>
                                     <p class="card-text"><strong>Battery:</strong> <?= $computer->battery ?></p>
                                 <?php endif ?>
 
-                                <?php if ($computer->mouse) : ?>
+                                <?php if (isset($computer->mouse)) : ?>
                                     <p class="card-text"><strong>Mouse:</strong> <?= $computer->mouse ?></p>
                                 <?php endif ?>
 
-                                <?php if ($computer->monitor) : ?>
-                                    <p class="card-text"><strong>Monitor:</strong> <?= $computer->monitor->inches, ', ', $computer->monitor->resolution ?></p>
+                                <?php if (isset($computer->monitor)) : ?>
+                                    <p class="card-text"><strong>Monitor:</strong> <?= $computer->monitor->inches . ', ' . $computer->monitor->resolution ?></p>
                                 <?php endif ?>
 
-                                <?php if ($computer->case) : ?>
+                                <?php if (isset($computer->case)) : ?>
                                     <p class="card-text"><strong>Case:</strong> <?= $computer->case ?></p>
                                 <?php endif ?>
 
-                                <?php if ($computer->psu) : ?>
+                                <?php if (isset($computer->psu)) : ?>
                                     <p class="card-text"><strong>PSU:</strong> <?= $computer->psu ?></p>
                                 <?php endif ?>
-
-                                <hr>
-
-                                <p class="card-text"><strong>SOMMARY:</strong> <?= $computer->getInfo() ?></p>
-
                             </div>
+
+                            <p class="card-footer"><strong>SOMMARY:</strong> <?= $computer->getInfo() ?></p>
                         </div>
                         <!-- /card -->
                     </div>

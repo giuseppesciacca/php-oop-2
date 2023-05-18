@@ -1,4 +1,5 @@
 <?php
+
 class Desktop extends Computer
 {
     public $model;
@@ -9,7 +10,7 @@ class Desktop extends Computer
     public $motherboard;
     public $urlPath;
     public $mouse;
-    public Monitor $monitor;
+    public $monitor;
     public $case;
     public $psu;
 

@@ -11,7 +11,7 @@ class Monitor
 
     public function __construct(string $inches, string $resolution)
     {
-        $this->$inches;
-        $this->$resolution;
+        $this->inches = $inches;
+        $this->resolution = $resolution;
     }
 }
