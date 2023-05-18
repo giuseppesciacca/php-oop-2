@@ -1,10 +1,19 @@
 <?php
+require_once __DIR__ . '/Traits/Shops.php';
 require_once __DIR__ . '/Models/Computer.php';
 require_once __DIR__ . '/Models/Monitor.php';
 require_once __DIR__ . '/Models/Desktop.php';
 require_once __DIR__ . '/Models/Laptop.php';
 
 include_once __DIR__ . '/Database/db.php';
+
+$computers[0]->setShop('Mediaworld');
+$computers[0]->setShop('Unieuro');
+$computers[1]->setShop('Euronics');
+$computers[3]->setShop('Expert');
+
+var_dump($computers[0]);
+
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +77,15 @@ include_once __DIR__ . '/Database/db.php';
                                 <?php if (isset($computer->psu)) : ?>
                                     <p class="card-text"><strong>PSU:</strong> <?= $computer->psu ?></p>
                                 <?php endif ?>
+
+                                <?php if (!count($computer->getShopArray()) < 1) : ?>
+                                    <p class="card-text"><strong>Acquistabile da:</strong> <?= $computer->getShopString() ?></p>
+                                <?php endif ?>
+
+                                <?php if (count($computer->getShopArray()) < 1) : ?>
+                                    <p class="card-text"> Attualmente non acquistabile</p>
+                                <?php endif ?>
+
                             </div>
 
                             <p class="card-footer"><strong>SOMMARY:</strong> <?= $computer->getInfo() ?></p>

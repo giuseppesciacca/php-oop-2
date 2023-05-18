@@ -3,6 +3,8 @@
 class Computer
 {
 
+    use Shop;
+
     public $model;
     public $ram;
     public $gpu;
