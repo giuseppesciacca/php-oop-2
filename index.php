@@ -11,9 +11,6 @@ $computers[0]->setShop('Mediaworld');
 $computers[0]->setShop('Unieuro');
 $computers[1]->setShop('Euronics');
 $computers[3]->setShop('Expert');
-
-var_dump($computers[0]);
-
 ?>
 
 <!DOCTYPE html>
