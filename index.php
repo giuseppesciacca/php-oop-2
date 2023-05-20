@@ -5,11 +5,6 @@ require_once __DIR__ . '/Models/Desktop.php';
 require_once __DIR__ . '/Models/Laptop.php';
 
 include_once __DIR__ . '/Database/db.php';
-
-$computers[0]->setShop('Mediaworld'); // try to pass a number, a vardump will show you the Exception
-$computers[0]->setShop('Unieuro');
-$computers[1]->setShop('Euronics');
-$computers[3]->setShop('Expert');
 ?>
 
 <!DOCTYPE html>

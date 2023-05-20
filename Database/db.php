@@ -9,3 +9,34 @@ $computers = [
 
     new Desktop('MSI MPG Infinite X2 13FNUG-038IT', '32gb', 'NVIDIA, GeForce RTX 4080 16gb', 'Intel i7 7900K', 'SSD 2000gb', 'Intel, Z690', 'https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_105017387/fee_786_587_png', 'Lenovo mouse', new Monitor('22"', '1920x1080px'), 'lenovo case', 'gold 800w'),
 ];
+
+try {
+    $computers[0]->setShop('Mediaworld'); // try to pass a number, a vardump will show you the Exception
+} catch (Exception $e) {
+    var_dump('Eccezione: ' . $e->getMessage());
+}
+
+try {
+    $computers[0]->setShop('Unieuro'); // try to pass a number, a vardump will show you the Exception
+} catch (Exception $e) {
+    var_dump('Eccezione: ' . $e->getMessage());
+}
+
+try {
+    $computers[1]->setShop('Euronics');
+} catch (Exception $e) {
+    var_dump('Eccezione: ' . $e->getMessage());
+}
+
+
+try {
+    $computers[1]->setShop('Euronics'); //duplicato non inserito
+} catch (Exception $e) {
+    var_dump('Eccezione: ' . $e->getMessage());
+}
+
+try {
+    $computers[3]->setShop('Expert');
+} catch (Exception $e) {
+    var_dump('Eccezione: ' . $e->getMessage());
+}

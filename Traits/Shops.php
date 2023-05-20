@@ -4,16 +4,12 @@ trait Shop
 {
     private $shops = [];
 
-    public function setShop(string $shop)
+    public function setShop($shop)
     {
-        try {
-            if (!in_array($shop, $this->shops) && (!is_numeric($shop))) {
-                array_push($this->shops, $shop);
-            } else {
-                throw new Exception('Is not a string');
-            }
-        } catch (Exception $e) {
-            var_dump('Eccezione: ' . $e->getMessage());
+        if (!in_array($shop, $this->shops) && is_string($shop)) {
+            array_push($this->shops, $shop);
+        } elseif (!is_string($shop)) {
+            throw new Exception('It\'s not a string');
         }
     }
 
