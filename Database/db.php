@@ -12,30 +12,9 @@ $computers = [
 
 try {
     $computers[0]->setShop('Mediaworld'); // try to pass a number, a vardump will show you the Exception
-} catch (Exception $e) {
-    var_dump('Eccezione: ' . $e->getMessage());
-}
-
-try {
-    $computers[0]->setShop('Unieuro'); // try to pass a number, a vardump will show you the Exception
-} catch (Exception $e) {
-    var_dump('Eccezione: ' . $e->getMessage());
-}
-
-try {
-    $computers[1]->setShop('Euronics');
-} catch (Exception $e) {
-    var_dump('Eccezione: ' . $e->getMessage());
-}
-
-
-try {
+    $computers[0]->setShop('Unieuro');
     $computers[1]->setShop('Euronics'); //duplicato non inserito
-} catch (Exception $e) {
-    var_dump('Eccezione: ' . $e->getMessage());
-}
-
-try {
+    $computers[1]->setShop('Euronics');
     $computers[3]->setShop('Expert');
 } catch (Exception $e) {
     var_dump('Eccezione: ' . $e->getMessage());
